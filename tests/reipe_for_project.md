@@ -21,7 +21,7 @@
 
 2. Design the Class System
 
-class OrderMenu:
+class Menu:
     def __init__(self):
         #parameters:
         #self.menu = {}
@@ -31,7 +31,7 @@ class OrderMenu:
         # return a list with all the dishes with prices 
         # for example {dish: pizza, price: 10}
 
-    def select_dish(self):
+    def select_dish(self, quantity):
         # Add the selected dish to the menu with a specified quantity
         # Parameters:
         # quantity: an int representing the number of dishes (default is 1)
@@ -39,10 +39,7 @@ class OrderMenu:
     def total_amount(self):
         # return: total amount (sum) of selected dishes 
     
-    def delivery_time(self, minutes):
-        # Parameters:
-        #minutes: an int representig time to deliver
-        #return delivery time 
+   
 
 class Order:
     def __init__(self, dish, price)
@@ -50,12 +47,55 @@ class Order:
     #dish is a string representig a dish
     #price is a int associate to a dish 
 
-    def time_to_make(self, minutes):
+    def select_dish(self, quantity):
+        # Add the selected dish to the menu with a specified quantity
+        # Parameters:
+        # quantity: an int representing the number of dishes (default is 1)
+
+    
+class Takeaway
+
+def time_to_make(self, minutes):
         #parameter 
         # minutes: is a int repsentig time 
         #return a int equivalent for time to make
 
+ def delivery_time(self, minutes):
+        # Parameters:
+        #minutes: an int representig time to deliver
+        #return delivery time 
+
 3. Create Examples as Integration Tests
+
+given menu 
+i would like to see the dishes availables with the prices
+
+def test_see_list_dishes_with_prices():
+    order_menu = OrderMenu()
+    dish_1 = Order ("pizza": 10)
+    dish_2 = Order ("nuggets": 8)
+    dish_3 = Order ("burger": 12)
+    order_menu.list_of_dishes() #=> ["pizza": 10,"nuggests": 8, "burger": 12) 
+
+given the list of dishes
+i would like to select the dishes 
+
+def test_quantity_of_dishes():
+    order_menu = OrderMenu()
+    dish_1 = Order ("pizza": 3)
+    dish_2 = Order ("nuggets": 1)
+    order_menu.select_dish() #=> ["pizza": 3, "nuggets": 1]
+
+given the dishes selected
+i want to know the price of the dishes selected
+
+def test_price_dishes_selected ():
+    order_menu = OrderMenu()
+    order_menu.list_of_dishes = ["pizza": 10,"nuggests": 8, "burger": 12]
+    order_menu.select_dish("pizza": 3)
+    order_menu.selec_dish("nuggets": 1)
+    order_menu.total_amount() #=> 38
+    
 
 4. Create Examples as Unit Tests
 
